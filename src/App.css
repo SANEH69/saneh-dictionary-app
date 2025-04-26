@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  background-color: #ffff;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(15, 14, 14);
 }
 
 .App-logo {
@@ -11,14 +16,6 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #ffff;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: rgb(15, 14, 14);
 }
 
 .App-link {
