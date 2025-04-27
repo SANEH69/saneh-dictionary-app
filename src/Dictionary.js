@@ -11,7 +11,7 @@ export default function Dictionary() {
     }
 
     function showMeaning(response) {
-        setMeaning(response.data.answer);
+        setMeaning(response.data.meanings[0].definition);
     }
     
     let apiKey = "04d1784de2be03a1bd2o2db8tf6b23e4";
