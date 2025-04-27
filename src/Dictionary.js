@@ -15,9 +15,7 @@ export default function Dictionary() {
     }
     
     let apiKey = "04d1784de2be03a1bd2o2db8tf6b23e4";
-    let context = "You are an English expert that knows meanings to every word.";
-    let prompt = `Please provide a brief meaning of ${word}. Please provide the best meaning. Make it a maximum of three lines.`;
-    let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+    let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${word}&key=${apiKey}`
 
     axios.get(apiUrl).then(showMeaning);
 
