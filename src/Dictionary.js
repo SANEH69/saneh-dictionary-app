@@ -11,7 +11,12 @@ export default function Dictionary() {
     }
 
     function showMeaning(response) {
-        setMeaning(response.data.meanings[0].definition);
+        console.log(response);
+        setMeaning({
+            definition: response.data.meanings[0].definition,
+            noun: response.data.meanings[0].partOfSpeech,
+            phonetics: response.data.phonetic,
+        });
     }
     
     let apiKey = "04d1784de2be03a1bd2o2db8tf6b23e4";
@@ -34,7 +39,8 @@ export default function Dictionary() {
         <div>
         <p>{form}</p>
         <p className="word">{word}</p>
-        <p>{meaning}</p>
+        <p>{meaning.phonetics}</p>
+        <p><strong>{meaning.noun}: </strong> {meaning.definition}</p>
         </div>
     );
 }
