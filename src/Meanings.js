@@ -2,7 +2,8 @@ import React from "react";
 
 export default function Meanings(props) {
     console.log(props.definitions);
-
+    
+    if (props.meaning) {
     return (
         <div className="Meanings">
             <h3>{props.meaning.partOfSpeech}</h3>
@@ -16,5 +17,10 @@ export default function Meanings(props) {
                 );
             })}
         </div>
-    );
+    ) 
+   } else {
+        return (
+            <p>Fetching data</p>
+        );
+   };
 }

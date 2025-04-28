@@ -40,7 +40,7 @@ export default function Dictionary() {
         <p>{form}</p>
         <p className="word">{word}</p>
         <p>{meaning.phonetics}</p>
-        {meaning.map(function (meaning, index) {
+        {meaning.definition.map(function (meaning, index) {
             return (
                 <div key={index}>
                     <Meanings meaning={meaning.definition} />
