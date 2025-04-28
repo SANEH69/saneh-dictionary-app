@@ -40,7 +40,8 @@ export default function Dictionary() {
         <p>{form}</p>
         <p className="word">{word}</p>
         <p>{meaning.phonetics}</p>
-        <p><strong>{meaning.noun}: </strong> {meaning.definition}</p>
+        <p><strong>{meaning.noun}</strong></p>
+        <p>{meaning.definition}</p>
         </div>
     );
 }
