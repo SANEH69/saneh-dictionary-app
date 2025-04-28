@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Meanings from "./Meanings";
 import "./Dictionary.css";
 
 export default function Dictionary() {
@@ -11,10 +12,9 @@ export default function Dictionary() {
     }
 
     function showMeaning(response) {
-        console.log(response);
+        console.log(response.data.meanings);
         setMeaning({
-            definition: response.data.meanings[0].definition,
-            noun: response.data.meanings[0].partOfSpeech,
+            definition: response.data.meanings,
             phonetics: response.data.phonetic,
         });
     }
@@ -40,8 +40,13 @@ export default function Dictionary() {
         <p>{form}</p>
         <p className="word">{word}</p>
         <p>{meaning.phonetics}</p>
-        <p><strong>{meaning.noun}</strong></p>
-        <p>{meaning.definition}</p>
+        {meaning.map(function (meaning, index) {
+            return (
+                <div key={index}>
+                    <Meanings meaning={meaning.definition} />
+                </div>
+            );
+        })}
         </div>
     );
 }
