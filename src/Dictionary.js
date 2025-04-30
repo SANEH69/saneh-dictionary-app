@@ -12,7 +12,6 @@ export default function Dictionary() {
     }
 
     function showMeaning(response) {
-        console.log(response.data.meanings);
         setMeaning({
             definition: response.data.meanings,
             phonetics: response.data.phonetic,
@@ -42,11 +41,13 @@ export default function Dictionary() {
             {meaning.phonetics && meaning.phonetics.length > 0 && (
                 <p>{meaning.phonetics[0]}</p>
             )}
-            {meaning.definition.map((definition, index) => (
+            {meaning.definition.map(function (definition, index) {
+                return (
                 <div key={definition.id || index}>
                     <Meanings meaning={definition.definition} />
                 </div>
-            ))}
+                );
+            })}
         </div>
     );
 }
