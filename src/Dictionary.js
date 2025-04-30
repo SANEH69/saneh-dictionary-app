@@ -12,10 +12,7 @@ export default function Dictionary() {
     }
 
     function showMeaning(response) {
-        setMeaning({
-            definition: response.data.meanings,
-            phonetics: response.data.phonetic,
-        });
+        setMeaning(response.data);
     }
     
     let apiKey = "04d1784de2be03a1bd2o2db8tf6b23e4";
@@ -36,18 +33,9 @@ export default function Dictionary() {
 
     return (
         <div>
-            <p>{form}</p>
-            <p className="word">{word}</p>
-            {meaning.phonetics && meaning.phonetics.length > 0 && (
-                <p>{meaning.phonetics[0]}</p>
-            )}
-            {meaning.definition.map(function (definition, index) {
-                return (
-                <div key={definition.id || index}>
-                    <Meanings meaning={definition.definition} />
-                </div>
-                );
-            })}
-        </div>
-    );
+             <p>{form}</p>
+             <p className="word">{word}</p>
+            <Meanings meaning={meaning} />
+       </div>
+     );
 }
