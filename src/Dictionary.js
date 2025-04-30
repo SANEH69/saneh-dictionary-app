@@ -35,18 +35,18 @@ export default function Dictionary() {
         </form>
     );
 
-    return(
+    return (
         <div>
-        <p>{form}</p>
-        <p className="word">{word}</p>
-        <p>{meaning.phonetics}</p>
-        {meaning.definition.map(function (meaning, index) {
-            return (
-                <div key={index}>
-                    <Meanings meaning={meaning.definition} />
+            <p>{form}</p>
+            <p className="word">{word}</p>
+            {meaning.phonetics && meaning.phonetics.length > 0 && (
+                <p>{meaning.phonetics[0]}</p>
+            )}
+            {meaning.definition.map((definition, index) => (
+                <div key={definition.id || index}>
+                    <Meanings meaning={definition.definition} />
                 </div>
-            );
-        })}
+            ))}
         </div>
     );
 }
