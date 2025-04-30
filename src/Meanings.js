@@ -1,9 +1,22 @@
 import React from "react";
+import Definitions from "./Definitions";
 
 export default function Meanings(props) {
-    console.log(props.meaning.length);
+    console.log(props.meaning);
 
+    if (props.meaning) {
     return (
-        <h1>Hello</h1>
+        <div className="Meaning">
+            {props.meaning.meanings.map(function (meaning, index) {
+                return (
+                    <div key={meaning.id || index}>
+                        <Definitions meaning={meaning} />
+                    </div>
+                );
+            })}
+        </div>
     );
+} else {
+    return null
+}
 }
