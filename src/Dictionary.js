@@ -5,14 +5,15 @@ import "./Dictionary.css";
 
 export default function Dictionary() {
     let [word, setWord] = useState(" ");
-    let [meaning, setMeaning] = useState(" ")
+    let [output, setOutput] = useState(" ")
 
     function showWord(event) {
         event.preventDefault();
     }
 
     function showMeaning(response) {
-        setMeaning(response.data);
+        console.log(response.data.meanings)
+        setOutput(response.data);
     }
     
     let apiKey = "04d1784de2be03a1bd2o2db8tf6b23e4";
@@ -35,7 +36,7 @@ export default function Dictionary() {
         <div>
              <p>{form}</p>
              <p className="word">{word}</p>
-            <Meanings meaning={meaning} />
-       </div>
-     );
+             <Meanings output={output} />
+        </div>
+    );
 }
