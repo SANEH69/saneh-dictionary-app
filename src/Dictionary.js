@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Meanings from "./Meanings";
+import Phonetic from "./Phonetic";
 import "./Dictionary.css";
 
 export default function Dictionary() {
@@ -12,7 +13,6 @@ export default function Dictionary() {
     }
 
     function showMeaning(response) {
-        console.log(response.data);
         setOutput(response.data);
     }
     
@@ -36,7 +36,13 @@ export default function Dictionary() {
         <div>
              <p>{form}</p>
              <p className="word">{word}</p>
-             <p>{output.phonetic}</p>
+             {output.phonetics.map(function (phonetic, index) {
+                return (
+                <div key={index}>
+                    <Phonetic phonetic={phonetic} />
+                </div>
+                );
+             })}
              <Meanings output={output} />
         </div>
     );
