@@ -36,6 +36,7 @@ export default function Dictionary() {
         <div>
              <p>{form}</p>
              <p className="word">{word}</p>
+             <p>{output.phonetic}</p>
              <Meanings output={output} />
         </div>
     );

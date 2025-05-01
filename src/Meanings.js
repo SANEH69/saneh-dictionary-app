@@ -6,7 +6,6 @@ export default function Meanings(props) {
     if (props.output.meanings) {
     return (
         <div className="Meaning">
-            <p>{props.output.phonetics}</p>
             {props.output.meanings.map(function (meaning, index) {
                 return (
                     <div key={index}>
