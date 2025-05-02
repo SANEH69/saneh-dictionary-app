@@ -36,13 +36,6 @@ export default function Dictionary() {
         <div>
              <p>{form}</p>
              <p className="word">{word}</p>
-             {output.phonetics.map(function (phonetic, index) {
-                return (
-                <div key={index}>
-                    <Phonetic phonetic={phonetic} />
-                </div>
-                );
-             })}
              <Meanings output={output} />
         </div>
     );
