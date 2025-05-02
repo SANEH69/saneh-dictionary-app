@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Meanings from "./Meanings";
-import Phonetic from "./Phonetic";
 import "./Dictionary.css";
 
 export default function Dictionary() {
