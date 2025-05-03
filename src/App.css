@@ -5,11 +5,6 @@
   font-size: 20px;
 }
 
-.App-content {
-  background: linear-gradient(to right, #434343 0%, black 100%);
-  margin: 20px 100px;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;

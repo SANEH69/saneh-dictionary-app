@@ -1,4 +1,5 @@
 import React from 'react';
+import Dictionary from "./Dictionary";
 import './App.css';
 
 
@@ -7,8 +8,9 @@ function App() {
     <div className="App">
       <div className="App-content">
       <header className="App-header">
-       Please type the word you'd like to know the meaning of...
+       Please search a word...
       </header>
+      <Dictionary />
       </div>
     </div>
   );
