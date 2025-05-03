@@ -5,7 +5,7 @@ export default function Definitions(props) {
     if (props.meaning) {
         return (
             <div className="Meanings">
-                <h3>{props.meaning.partOfSpeech}</h3>
+                <h5>{props.meaning.partOfSpeech}</h5>
                 {Array.isArray(props.meaning.definitions) && props.meaning.definitions.map((definition, index) => (
                     <div key={index}>
                         <p>{definition.definition}</p>
