@@ -10,7 +10,7 @@ function App() {
       <header className="App-header">
        Please type the word you'd like to know the meaning of...
       </header>
-      <Dictionary word="Sand" />
+      <Dictionary word='Sand' />
       <Footer />
       </div>
     </div>

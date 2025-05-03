@@ -4,8 +4,8 @@ import Meanings from "./Meanings";
 import "./Dictionary.css";
 
 export default function Dictionary(props) {
-    let [word, setWord] = useState(" ");
-    let [output, setOutput] = useState(props.word)
+    let [word, setWord] = useState(props.word);
+    let [output, setOutput] = useState(" ")
     let [ready, setReady] = useState(false)
 
     function showWord(event) {
@@ -17,15 +17,21 @@ export default function Dictionary(props) {
         setOutput(response.data);
     }
     
+    function showPhoto(response) {
+        console.log(response);
+        setReady(true);
+    }
+
     function search() {
     let apiKey = "04d1784de2be03a1bd2o2db8tf6b23e4";
     let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${word}&key=${apiKey}`
     axios.get(apiUrl).then(showMeaning);
-    }
+    
 
     let photoApiKey = "04d1784de2be03a1bd2o2db8tf6b23e4";
     let photoApiUrl = `https://api.shecodes.io/images/v1/search?query=${word}&key=${photoApiKey}`
     axios.get(photoApiUrl).then(showPhoto);
+    }
 
     function searchWord(event) {
         setWord(event.target.value);
@@ -38,7 +44,7 @@ export default function Dictionary(props) {
         </form>
     );
 
-    if (ready) {
+    if (output.ready) {
     return (
         <div>
              <p>{form}</p>
@@ -48,6 +54,6 @@ export default function Dictionary(props) {
     )
 } else {
     search()
-    return "Searching..."
+    return "Please wait..."
 }
 }
